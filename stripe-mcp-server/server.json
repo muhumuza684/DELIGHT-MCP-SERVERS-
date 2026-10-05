@@ -1,0 +1,22 @@
+{
+  "$schema": "https://registry.modelcontextprotocol.io/schemas/server.json",
+  "name": "io.github.yourorg/stripe-mcp-server",
+  "title": "Stripe MCP Server",
+  "description": "Stripe access: list/search customers and charges, gated customer creation and refunds with live-mode and per-call confirmation guards.",
+  "version": "1.0.0",
+  "repository": "https://github.com/yourorg/stripe-mcp-server",
+  "packages": [
+    {
+      "registryType": "npm",
+      "identifier": "@yourorg/stripe-mcp-server",
+      "version": "1.0.0",
+      "transport": { "type": "stdio" },
+      "environmentVariables": [
+        { "name": "STRIPE_SECRET_KEY", "isRequired": true, "isSecret": true, "description": "Stripe restricted secret key (sk_test_... recommended)" },
+        { "name": "ALLOW_WRITE", "isRequired": false, "description": "Set 'true' to enable create_customer/create_refund" },
+        { "name": "ALLOW_LIVE_MODE", "isRequired": false, "description": "Set 'true' to allow a live-mode key to be used" },
+        { "name": "MAX_RESULTS", "isRequired": false, "description": "Default page size for list tools" }
+      ]
+    }
+  ]
+}

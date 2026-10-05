@@ -1,0 +1,28 @@
+{
+  "$schema": "https://registry.modelcontextprotocol.io/schemas/server.json",
+  "name": "io.github.yourorg/fetch-mcp-server",
+  "title": "Fetch MCP Server",
+  "description": "Fetches a URL and returns clean, LLM-readable Markdown with pagination for long pages.",
+  "version": "1.0.0",
+  "repository": "https://github.com/yourorg/fetch-mcp-server",
+  "packages": [
+    {
+      "registryType": "npm",
+      "identifier": "@yourorg/fetch-mcp-server",
+      "version": "1.0.0",
+      "transport": { "type": "stdio" },
+      "environmentVariables": [
+        {
+          "name": "MAX_RESPONSE_CHARS",
+          "description": "Default max characters returned per call",
+          "isRequired": false
+        },
+        {
+          "name": "REQUEST_TIMEOUT_MS",
+          "description": "Request timeout in milliseconds",
+          "isRequired": false
+        }
+      ]
+    }
+  ]
+}

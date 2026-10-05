@@ -1,0 +1,28 @@
+{
+  "$schema": "https://registry.modelcontextprotocol.io/schemas/server.json",
+  "name": "io.github.yourorg/memory-mcp-server",
+  "title": "Memory MCP Server",
+  "description": "Stateful memory: store, search, list, update, and delete facts across sessions.",
+  "version": "1.0.0",
+  "repository": "https://github.com/yourorg/memory-mcp-server",
+  "packages": [
+    {
+      "registryType": "npm",
+      "identifier": "@yourorg/memory-mcp-server",
+      "version": "1.0.0",
+      "transport": { "type": "stdio" },
+      "environmentVariables": [
+        {
+          "name": "MEMORY_FILE",
+          "description": "Path to the JSON file memories are persisted to",
+          "isRequired": false
+        },
+        {
+          "name": "MAX_ENTRIES",
+          "description": "Hard cap on number of stored memories",
+          "isRequired": false
+        }
+      ]
+    }
+  ]
+}

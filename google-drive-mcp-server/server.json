@@ -1,0 +1,23 @@
+{
+  "$schema": "https://registry.modelcontextprotocol.io/schemas/server.json",
+  "name": "io.github.yourorg/google-drive-mcp-server",
+  "title": "Google Drive MCP Server (read-only)",
+  "description": "OAuth-authenticated read-only Google Drive access: search, list, metadata, and content reading with Docs/Sheets export.",
+  "version": "1.0.0",
+  "repository": "https://github.com/yourorg/google-drive-mcp-server",
+  "packages": [
+    {
+      "registryType": "npm",
+      "identifier": "@yourorg/google-drive-mcp-server",
+      "version": "1.0.0",
+      "transport": { "type": "stdio" },
+      "environmentVariables": [
+        { "name": "GOOGLE_CLIENT_ID", "isRequired": true, "isSecret": true, "description": "Google OAuth Client ID" },
+        { "name": "GOOGLE_CLIENT_SECRET", "isRequired": true, "isSecret": true, "description": "Google OAuth Client Secret" },
+        { "name": "OAUTH_REDIRECT_PORT", "isRequired": false, "description": "Local OAuth redirect port (default 8735)" },
+        { "name": "TOKEN_FILE", "isRequired": false, "description": "Path to cached token file" },
+        { "name": "MAX_EXPORT_CHARS", "isRequired": false, "description": "Cap on returned file content length" }
+      ]
+    }
+  ]
+}

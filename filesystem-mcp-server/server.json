@@ -1,0 +1,28 @@
+{
+  "$schema": "https://registry.modelcontextprotocol.io/schemas/server.json",
+  "name": "io.github.yourorg/filesystem-mcp-server",
+  "title": "Filesystem MCP Server",
+  "description": "Scoped read/write access to a local directory: list, read, write, create, delete files.",
+  "version": "1.0.0",
+  "repository": "https://github.com/yourorg/filesystem-mcp-server",
+  "packages": [
+    {
+      "registryType": "npm",
+      "identifier": "@yourorg/filesystem-mcp-server",
+      "version": "1.0.0",
+      "transport": { "type": "stdio" },
+      "environmentVariables": [
+        {
+          "name": "ALLOWED_DIR",
+          "description": "Root directory the server is allowed to read/write",
+          "isRequired": true
+        },
+        {
+          "name": "MAX_FILE_BYTES",
+          "description": "Maximum file size read_file will return",
+          "isRequired": false
+        }
+      ]
+    }
+  ]
+}

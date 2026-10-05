@@ -1,0 +1,19 @@
+## Auth
+
+OAuth 2.1, via the `oauth.ts` module next to `index.ts` — PKCE, a local
+loopback redirect listener, on-disk token caching (`0600` permissions),
+and refresh-before-expiry, all proven unchanged across three real
+providers (Slack, Google Drive, Notion) in the original catalog.
+
+**Before you assume your provider matches the defaults**, check:
+- Does it require PKCE? (`usesPkce`)
+- Does it issue refresh tokens, and under what conditions?
+- Does its token endpoint want form-urlencoded credentials in the body,
+  or Basic auth + JSON? (`tokenAuthStyle` — Notion needed the latter;
+  don't assume form-urlencoded "just works" until you've checked)
+- Does it do real scope negotiation, or a different access model
+  entirely (Notion: capability + explicit per-page sharing)?
+
+Fill in `authorizeUrl`, `tokenUrl`, `scopes`, and `tokenAuthStyle` (if
+needed) in `index.ts` from your provider's actual OAuth documentation —
+never assume.

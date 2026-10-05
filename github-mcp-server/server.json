@@ -1,0 +1,34 @@
+{
+  "$schema": "https://registry.modelcontextprotocol.io/schemas/server.json",
+  "name": "io.github.yourorg/github-mcp-server",
+  "title": "GitHub MCP Server (read-only)",
+  "description": "Read-only access to GitHub repositories, issues, pull requests, and code search.",
+  "version": "1.0.0",
+  "repository": "https://github.com/yourorg/github-mcp-server",
+  "packages": [
+    {
+      "registryType": "npm",
+      "identifier": "@yourorg/github-mcp-server",
+      "version": "1.0.0",
+      "transport": { "type": "stdio" },
+      "environmentVariables": [
+        {
+          "name": "GITHUB_TOKEN",
+          "description": "Fine-grained GitHub personal access token, read-only repo scope",
+          "isRequired": true,
+          "isSecret": true
+        },
+        {
+          "name": "GITHUB_API_BASE",
+          "description": "Override for GitHub Enterprise Server",
+          "isRequired": false
+        },
+        {
+          "name": "MAX_RESULTS",
+          "description": "Page size for list/search tools",
+          "isRequired": false
+        }
+      ]
+    }
+  ]
+}

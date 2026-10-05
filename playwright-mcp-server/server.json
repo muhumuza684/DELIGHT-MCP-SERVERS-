@@ -1,0 +1,23 @@
+{
+  "$schema": "https://registry.modelcontextprotocol.io/schemas/server.json",
+  "name": "io.github.yourorg/playwright-mcp-server",
+  "title": "Playwright MCP Server",
+  "description": "Browser automation: navigate, read page text, click, fill forms, screenshot, across multiple named pages.",
+  "version": "1.0.0",
+  "repository": "https://github.com/yourorg/playwright-mcp-server",
+  "packages": [
+    {
+      "registryType": "npm",
+      "identifier": "@yourorg/playwright-mcp-server",
+      "version": "1.0.0",
+      "transport": { "type": "stdio" },
+      "environmentVariables": [
+        { "name": "HEADLESS", "isRequired": false, "description": "Set 'false' to run with a visible browser" },
+        { "name": "NAV_TIMEOUT_MS", "isRequired": false, "description": "Max time for navigation" },
+        { "name": "ACTION_TIMEOUT_MS", "isRequired": false, "description": "Max time for click/fill/selector waits" },
+        { "name": "MAX_PAGES", "isRequired": false, "description": "Cap on concurrently open pages" },
+        { "name": "MAX_TEXT_CHARS", "isRequired": false, "description": "Cap on get_page_text output length" }
+      ]
+    }
+  ]
+}

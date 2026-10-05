@@ -1,0 +1,34 @@
+{
+  "$schema": "https://registry.modelcontextprotocol.io/schemas/server.json",
+  "name": "io.github.yourorg/postgres-mcp-server",
+  "title": "Postgres MCP Server (read-only)",
+  "description": "Read-only Postgres access: schema/table introspection and safe single-SELECT queries.",
+  "version": "1.0.0",
+  "repository": "https://github.com/yourorg/postgres-mcp-server",
+  "packages": [
+    {
+      "registryType": "npm",
+      "identifier": "@yourorg/postgres-mcp-server",
+      "version": "1.0.0",
+      "transport": { "type": "stdio" },
+      "environmentVariables": [
+        {
+          "name": "DATABASE_URL",
+          "description": "Postgres connection string for a read-only database role",
+          "isRequired": true,
+          "isSecret": true
+        },
+        {
+          "name": "STATEMENT_TIMEOUT_MS",
+          "description": "Per-query timeout in milliseconds",
+          "isRequired": false
+        },
+        {
+          "name": "MAX_ROWS",
+          "description": "Row cap per query result",
+          "isRequired": false
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "$schema": "https://registry.modelcontextprotocol.io/schemas/server.json",
+  "name": "io.github.yourorg/slack-mcp-server",
+  "title": "Slack MCP Server",
+  "description": "OAuth-authenticated Slack access: list channels, read history, look up users, post messages (gated).",
+  "version": "1.0.0",
+  "repository": "https://github.com/yourorg/slack-mcp-server",
+  "packages": [
+    {
+      "registryType": "npm",
+      "identifier": "@yourorg/slack-mcp-server",
+      "version": "1.0.0",
+      "transport": { "type": "stdio" },
+      "environmentVariables": [
+        { "name": "SLACK_CLIENT_ID", "isRequired": true, "isSecret": true, "description": "Slack app Client ID" },
+        { "name": "SLACK_CLIENT_SECRET", "isRequired": true, "isSecret": true, "description": "Slack app Client Secret" },
+        { "name": "OAUTH_REDIRECT_PORT", "isRequired": false, "description": "Local OAuth redirect port (default 8734)" },
+        { "name": "TOKEN_FILE", "isRequired": false, "description": "Path to cached token file" },
+        { "name": "ALLOW_WRITE", "isRequired": false, "description": "Set 'true' to enable post_message" }
+      ]
+    }
+  ]
+}

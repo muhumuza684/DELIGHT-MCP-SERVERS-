@@ -1,0 +1,15 @@
+## Auth
+
+API key, sent as `Authorization: Bearer {{ENV_VAR_NAME}}` on every
+request via a single `apiRequest()` wrapper. Proven by
+`github-mcp-server`, `postgres-mcp-server` (connection-string variant),
+and `stripe-mcp-server` in the original catalog.
+
+**Before you rely on the Bearer-header assumption**, check your
+provider's actual token-exchange/request docs — it's not universal.
+Notion, for example, needed Basic-auth + JSON instead; see the OAuth
+head's notes for a worked example of a provider that broke this exact
+assumption.
+
+Use the most tightly scoped key/token your provider offers — never a
+default full-access key if a restricted/read-only one is available.

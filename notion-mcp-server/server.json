@@ -1,0 +1,22 @@
+{
+  "$schema": "https://registry.modelcontextprotocol.io/schemas/server.json",
+  "name": "io.github.yourorg/notion-mcp-server",
+  "title": "Notion MCP Server (read-only)",
+  "description": "OAuth-authenticated read-only Notion access: search, read pages and page content, query databases.",
+  "version": "1.0.0",
+  "repository": "https://github.com/yourorg/notion-mcp-server",
+  "packages": [
+    {
+      "registryType": "npm",
+      "identifier": "@yourorg/notion-mcp-server",
+      "version": "1.0.0",
+      "transport": { "type": "stdio" },
+      "environmentVariables": [
+        { "name": "NOTION_CLIENT_ID", "isRequired": true, "isSecret": true, "description": "Notion public integration Client ID" },
+        { "name": "NOTION_CLIENT_SECRET", "isRequired": true, "isSecret": true, "description": "Notion public integration Client Secret" },
+        { "name": "OAUTH_REDIRECT_PORT", "isRequired": false, "description": "Local OAuth redirect port (default 8736)" },
+        { "name": "TOKEN_FILE", "isRequired": false, "description": "Path to cached token file" }
+      ]
+    }
+  ]
+}

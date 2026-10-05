@@ -1,0 +1,35 @@
+// Gated write tool — proven pattern from slack-mcp-server (post_message)
+// and stripe-mcp-server (create_customer/create_refund) in the original
+// catalog. Two rules, don't skip either:
+//   1. Side-effecting tools are OFF by default (ALLOW_WRITE gate below).
+//   2. Anything hard to reverse (refunds, deletes, sends) should ALSO
+//      require a per-call `confirm: true`, on top of the server-level
+//      gate — see stripe-mcp-server's create_refund for the pattern.
+const ALLOW_WRITE = (process.env.ALLOW_WRITE ?? "false").toLowerCase() === "true";
+
+function writeGateError() {
+  return toolError(
+    "Write access is disabled on this server (ALLOW_WRITE is not 'true'). " +
+      "This is a deliberate default — enable it explicitly once you're ready."
+  );
+}
+
+server.registerTool(
+  "example_write_tool",
+  {
+    title: "Example write tool",
+    description: "Replace this with a real write tool. WRITE — disabled unless ALLOW_WRITE=true.",
+    inputSchema: {
+      input: z.string(),
+    },
+  },
+  async ({ input }) => {
+    if (!ALLOW_WRITE) return writeGateError();
+    try {
+      // TODO: real side-effecting logic here
+      return textResult({ wrote: input });
+    } catch (err) {
+      return toolError((err as Error).message);
+    }
+  }
+);

@@ -1,0 +1,31 @@
+{
+    "name":  "@yourorg/notion-mcp-server",
+    "version":  "1.0.0",
+    "description":  "MCP server for Notion — OAuth 2.1, search, read pages/databases, query databases. — Built in Uganda by Bryt Matech UG",
+    "type":  "module",
+    "main":  "dist/index.js",
+    "bin":  {
+                "notion-mcp-server":  "dist/index.js"
+            },
+    "mcpName":  "io.github.yourorg/notion-mcp-server",
+    "scripts":  {
+                    "build":  "tsc",
+                    "start":  "node dist/index.js",
+                    "dev":  "tsx watch src/index.ts"
+                },
+    "dependencies":  {
+                         "@modelcontextprotocol/sdk":  "^1.26.0",
+                         "zod":  "^3.23.8",
+                         "zod-to-json-schema":  "^3.24.1"
+                     },
+    "devDependencies":  {
+                            "@types/node":  "^20.14.0",
+                            "tsx":  "^4.16.0",
+                            "typescript":  "^5.5.0"
+                        },
+    "engines":  {
+                    "node":  "\u003e=18"
+                },
+    "license":  "MIT",
+    "author":  "Bryt Matech UG"
+}
