@@ -1,0 +1,155 @@
+
+== Filesystem
+  PASS  starts and says hello, with the right name and your branding
+  PASS  offers exactly the expected tools
+  PASS  write then read gives back exactly what was written
+  PASS  writing into a new nested folder creates it
+  PASS  list_directory shows files and folders
+  PASS  create_directory works
+  PASS  reading a missing file is an error, not a crash
+  PASS  path traversal (../) is refused and nothing is written outside
+  PASS  a sibling folder with a similar name is refused
+  PASS  an absolute path outside the folder is refused
+  PASS  files over the size limit are refused
+  PASS  delete_file removes a file
+  PASS  delete_file refuses to delete a folder
+
+== Memory
+  PASS  starts and says hello, with the right name and your branding
+  PASS  offers exactly the expected tools
+  PASS  remember stores a note with an id and tags
+  PASS  recall finds it by keyword, and ignores case
+  PASS  recall returns nothing for an unrelated word
+  PASS  better matches rank first
+  PASS  list_memories reports the total, newest first
+  PASS  tag filter works
+  PASS  update_memory changes the note
+  PASS  update_memory with an unknown id is an error
+  PASS  update_memory with a malformed id is rejected
+  PASS  the notes file on disk is valid JSON
+  PASS  notes survive a restart
+  PASS  forget deletes, and forgetting twice is an error
+  PASS  20 notes saved at the same moment are all kept
+  PASS  the size cap stops runaway growth
+
+== Web Fetch
+  PASS  starts and says hello, with the right name and your branding
+  PASS  offers exactly the expected tools
+  PASS  refuses http://127.0.0.1
+  PASS  refuses http://localhost:3000
+  PASS  refuses http://[::1]/
+  PASS  refuses http://[::ffff:127.0.0.1]/
+  PASS  refuses http://169.254.169.254/latest/meta-data/
+  PASS  refuses http://10.0.0.1/
+  PASS  refuses http://192.168.1.1/
+  PASS  refuses http://printer.local/
+  PASS  refuses file:///C:/Windows/win.ini
+  PASS  refuses ftp://example.com/x
+  PASS  a malformed URL is rejected
+  FAIL  example.com: cleaned page has a title, text, and no CSS or scripts
+          Error: fetch failed
+  FAIL  raw=true returns the page source
+          missing text: wanted "<html" in "Error: fetch failed"
+  FAIL  a 404 is reported as an error
+          missing text: wanted "404" in "Error: fetch failed"
+  FAIL  an image is refused with a clear message
+          missing text: wanted "not a web page" in "Error: fetch failed"
+  FAIL  a redirect is followed and the final address is shown
+          Error: fetch failed
+  FAIL  long pages are cut with a continue hint, and start_index continues
+          Error: fetch failed
+
+== Browser Pilot
+  PASS  starts and says hello, with the right name and your branding
+  PASS  offers exactly the expected tools
+  PASS  refuses localhost
+  PASS  refuses a private address
+  PASS  refuses file: pages
+  PASS  get_page_text before navigating is a clear error
+  FAIL  navigate opens a real page
+          Error: page.goto: net::ERR_CONNECTION_RESET at https://example.com/
+Call log:
+  - navigating to "https://example.com/", waiting until "domcontentloaded"
+
+  FAIL  get_page_text reads it
+          missing text: wanted "domain" in ""
+  PASS  screenshot returns a real PNG image
+  FAIL  list_pages shows the open page
+          missing text: wanted "example.com" in "default: chrome-error://chromewebdata/"
+  PASS  a second page can be opened and closed
+  PASS  clicking something that is not there is an error, not a hang
+  PASS  the open-page limit is enforced
+
+== GitHub
+  PASS  refuses to start without its credentials, and says which ones
+  PASS  starts and says hello, with the right name and your branding
+  PASS  offers exactly the expected tools
+  FAIL  a fake token reaches GitHub and is rejected cleanly (401)
+          missing text: wanted "401" in "Error: fetch failed"
+
+== Database
+  PASS  refuses to start without its credentials, and says which ones
+  PASS  starts and says hello, with the right name and your branding
+  PASS  offers exactly the expected tools
+  PASS  DROP TABLE is refused before touching any database
+  PASS  two statements at once are refused
+  PASS  a DELETE hidden inside a WITH is refused
+  PASS  INSERT, UPDATE and TRUNCATE are refused
+
+== Payments (Stripe)
+  PASS  refuses to start without its credentials, and says which ones
+  PASS  starts and says hello, with the right name and your branding
+  PASS  offers exactly the expected tools
+  PASS  writing is switched off by default
+  FAIL  a fake key reaches Stripe and is rejected cleanly
+          missing text: wanted "Invalid API Key" in "Error: fetch failed"
+  PASS  with writing on, a refund still needs confirm=true
+  PASS  a live key is refused unless explicitly allowed
+
+== Slack
+  PASS  refuses to start without its credentials, and says which ones
+  PASS  starts and says hello, with the right name and your branding
+  PASS  offers exactly the expected tools
+  PASS  posting is switched off by default
+
+== Drive
+  PASS  refuses to start without its credentials, and says which ones
+  PASS  starts and says hello, with the right name and your branding
+  PASS  offers exactly the expected tools
+
+== Notion
+  PASS  refuses to start without its credentials, and says which ones
+  PASS  starts and says hello, with the right name and your branding
+  PASS  offers exactly the expected tools
+
+================ SUMMARY ================
+   ok   Filesystem           13 passed, 0 failed, 0 skipped
+   ok   Memory               16 passed, 0 failed, 0 skipped
+  FAIL  Web Fetch            13 passed, 6 failed, 0 skipped
+  FAIL  Browser Pilot        10 passed, 3 failed, 0 skipped
+  FAIL  GitHub               3 passed, 1 failed, 0 skipped
+   ok   Database             7 passed, 0 failed, 0 skipped
+  FAIL  Payments (Stripe)    6 passed, 1 failed, 0 skipped
+   ok   Slack                4 passed, 0 failed, 0 skipped
+   ok   Drive                3 passed, 0 failed, 0 skipped
+   ok   Notion               3 passed, 0 failed, 0 skipped
+
+  Total: 78 passed, 11 failed, 0 skipped
+
+  What failed:
+   - Web Fetch: example.com: cleaned page has a title, text, and no CSS or scripts -> Error: fetch failed
+   - Web Fetch: raw=true returns the page source -> missing text: wanted "<html" in "Error: fetch failed"
+   - Web Fetch: a 404 is reported as an error -> missing text: wanted "404" in "Error: fetch failed"
+   - Web Fetch: an image is refused with a clear message -> missing text: wanted "not a web page" in "Error: fetch failed"
+   - Web Fetch: a redirect is followed and the final address is shown -> Error: fetch failed
+   - Web Fetch: long pages are cut with a continue hint, and start_index continues -> Error: fetch failed
+   - Browser Pilot: navigate opens a real page -> Error: page.goto: net::ERR_CONNECTION_RESET at https://example.com/
+Call log:
+  - navigating to "https://example.com/", waiting until "domcontentloaded"
+
+   - Browser Pilot: get_page_text reads it -> missing text: wanted "domain" in ""
+   - Browser Pilot: list_pages shows the open page -> missing text: wanted "example.com" in "default: chrome-error://chromewebdata/"
+   - GitHub: a fake token reaches GitHub and is rejected cleanly (401) -> missing text: wanted "401" in "Error: fetch failed"
+   - Payments (Stripe): a fake key reaches Stripe and is rejected cleanly -> missing text: wanted "Invalid API Key" in "Error: fetch failed"
+
+  RESULT: some checks failed. Send me tests\test-report.txt
