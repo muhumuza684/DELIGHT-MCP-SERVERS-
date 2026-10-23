@@ -3,15 +3,15 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Give your AI new abilities in two taps. Ten free helpers that let AI apps like Claude work with your files, web pages, notes, code, data, payments, Slack, Drive and Notion. Built in Uganda by Bryt Matech UG.">
-<!-- delight-build 2026-10-16 simple-start -->
-<title>DELIGHT | Give your AI new abilities</title>
+<meta name="description" content="Free helpers that give your AI new abilities, and ready-made APIs for your app or business. Built in Uganda by Bryt Matech UG.">
+<!-- delight-build 2026-10-20 helpers-and-apis -->
+<title>DELIGHT | Free AI helpers and ready-made APIs</title>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect x='2' y='2' width='36' height='36' rx='10' fill='%230B1633'/%3E%3Ccircle cx='20' cy='21' r='9' fill='none' stroke='%23FFB000' stroke-width='3'/%3E%3Ccircle cx='20' cy='21' r='2.5' fill='%23FFB000'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#F1F4F9;--card:#fff;--ink:#0F172A;--muted:#475569;--line:#D9E0EC;--blue:#1F4DD1;--blue-d:#12327F;--blue-l:#E6ECFF;--yellow:#FFD60A;--onyellow:#2A2000;--ok:#0F6B3A;--ok-l:#E3F5EA;--amber:#8A5300;--amber-l:#FFF1D6;--red:#9A1B1B;--red-l:#FDE7E7}
+:root{--bg:#F4F8FC;--card:#fff;--ink:#0A2540;--muted:#46607C;--line:#CFE0F0;--blue:#0C549C;--blue-d:#083A6E;--blue-l:#E1EDF8;--yellow:#FFF000;--onyellow:#0A2540;--stripe:var(--pink);--pink:#D41F78;--ok:#0F6B3A;--ok-l:#E3F5EA;--amber:#8A5300;--amber-l:#FFF1D6;--red:#9A1B1B;--red-l:#FDE7E7}
 *{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%}
 body{margin:0;background:var(--bg);color:var(--ink);font:400 18px/1.55 'Plus Jakarta Sans',system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif}
@@ -32,7 +32,7 @@ code{font:14px ui-monospace,Menlo,Consolas,monospace;background:var(--bg);border
 .tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;margin-top:26px}
 .big{display:flex;flex-direction:column;align-items:flex-start;gap:12px;text-align:left;width:100%;padding:26px;min-height:170px;border-radius:24px;border:2px solid var(--line);background:#fff}
 .big:hover{border-color:var(--blue);transform:translateY(-2px)}
-.big[aria-pressed="true"]{border-color:var(--blue);box-shadow:0 0 0 4px rgba(31,77,209,.18)}
+.big[aria-pressed="true"]{border-color:var(--blue);box-shadow:0 0 0 4px rgba(12,84,156,.18)}
 .big .ic{width:62px;height:62px;border-radius:18px;background:var(--blue-l);color:var(--blue);display:grid;place-items:center}
 .big b{font-size:24px;display:block}
 .big span.d{color:var(--muted);font-size:16.5px}
@@ -98,12 +98,12 @@ code{font:14px ui-monospace,Menlo,Consolas,monospace;background:var(--bg);border
 .act.done{border-color:#BFE3CC;background:#F6FBF8}
 .act.done .an{background:var(--ok);color:#fff}
 .act.done .sm2{color:var(--ok);font-size:15.5px}
-.act.active{border-color:var(--blue);box-shadow:0 0 0 4px rgba(31,77,209,.14)}
+.act.active{border-color:var(--blue);box-shadow:0 0 0 4px rgba(12,84,156,.14)}
 .act.active .an{background:var(--blue);color:#fff}
 .act .t2{margin-top:6px;color:var(--muted);font-size:17px}
 .act .go{margin-top:14px}
 .say{display:flex;align-items:center;gap:12px;margin-top:12px;padding:12px 14px;border-radius:14px;background:var(--bg);border:2px solid var(--line)}
-.say q{flex:1;font-size:18px;quotes:none}
+.say q{flex:1;font-size:18px;quotes:none;word-break:break-all}
 .two{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:16px}
 @media(max-width:560px){.two{grid-template-columns:1fr}}
 .fix{margin-top:16px;padding:18px;border-radius:18px;background:var(--red-l);border:2px solid #E8B4B4}
@@ -135,27 +135,54 @@ pre{margin:10px 0 14px;padding:14px;border-radius:12px;background:var(--bg);bord
 .foot a{font-weight:500}
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
 @media(max-width:560px){.panel{padding:20px}}
+
+.stripe{height:7px;background:var(--stripe)}
+.topband{background:var(--blue)}
+.topband .top{padding:18px 0}
+.topband .brand{color:#fff}.topband .brand small{color:#CFE2F6}
+.topband .help{background:#fff;border-color:#fff;color:var(--ink)}
+.big,.ai,.pnl,.panel{box-shadow:0 1px 2px rgba(10,37,64,.06),0 10px 26px rgba(10,37,64,.07)}
+.big[data-k=mcp]{border-top:7px solid var(--blue)}
+.big[data-k=api]{border-top:7px solid var(--yellow)}
+.search,.li,.rev{background:#F4F8FC}
+.li[aria-pressed="true"]{background:var(--blue-l)}
+.tabs button[aria-pressed="true"]{background:var(--blue);border-color:var(--blue);color:#fff}
+.foot{background:var(--ink);color:#C9D8EA;border:0;border-radius:22px;padding:24px 26px;margin-top:34px}
+.foot a{color:var(--yellow)}
+
+.btn.blue{background:var(--pink);color:#fff}
+.act.active{border-color:var(--pink);box-shadow:0 0 0 4px rgba(212,31,120,.14)}
+.act.active .an{background:var(--pink)}
+.link{color:var(--pink)}
+.hrow{display:flex;align-items:center;gap:10px}
+.homebtn{width:46px;height:46px;border-radius:50%;border:0;background:#fff;color:var(--blue);display:grid;place-items:center}
+.homebtn:hover{background:var(--yellow);color:var(--ink)}
+.navbar{padding:16px 0 0}
+.nb{display:inline-flex;align-items:center;gap:6px;min-height:46px;padding:0 18px 0 12px;border-radius:999px;border:2px solid var(--line);background:#fff;color:var(--blue-d);font-weight:800;font-size:16px}
+.nb:hover{border-color:var(--blue)}
 </style>
 </head>
 <body>
-<div class="wrap">
+<div class="stripe"></div>
+<div class="topband"><div class="wrap" style="padding-bottom:0">
   <header class="top">
-    <a class="brand" href="./"><svg width="40" height="40" viewBox="0 0 40 40" aria-hidden="true"><rect x="2" y="2" width="36" height="36" rx="10" fill="#0B1633"/><circle cx="20" cy="21" r="9" fill="none" stroke="#FFB000" stroke-width="3"/><circle cx="20" cy="21" r="2.5" fill="#FFB000"/></svg><span>DELIGHT<small>Built in Uganda by Bryt Matech UG</small></span></a>
-    <a class="help" href="https://wa.me/256759621612?text=Hello%2C%20I%20need%20help%20with%20DELIGHT." target="_blank" rel="noopener">Need a hand?</a>
+    <a class="brand" href="./" data-act="home"><svg width="40" height="40" viewBox="0 0 40 40" aria-hidden="true"><rect x="2" y="2" width="36" height="36" rx="10" fill="#0B1633"/><circle cx="20" cy="21" r="9" fill="none" stroke="#FFB000" stroke-width="3"/><circle cx="20" cy="21" r="2.5" fill="#FFB000"/></svg><span>DELIGHT<small>Built in Uganda by Bryt Matech UG</small></span></a>
+    <span class="hrow"><button class="homebtn" data-act="home" aria-label="Home"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11l9-8 9 8M5 10v10h5v-6h4v6h5V10"/></svg></button><a class="help" href="https://wa.me/256759621612?text=Hello%2C%20I%20need%20help%20with%20DELIGHT." target="_blank" rel="noopener">Need a hand?</a></span>
   </header>
-  <noscript><div class="panel"><h2>This page needs JavaScript.</h2><p class="note">You can also browse everything on <a href="https://github.com/muhumuza684/DELIGHT-MCP-SERVERS-">GitHub</a>.</p></div></noscript>
+</div></div>
+<div class="wrap">
+  <noscript><div class="panel"><h2>This page needs JavaScript.</h2><p class="note">Please turn it on, or email us at <a href="mailto:muhumuzabright26@gmail.com">muhumuzabright26@gmail.com</a>.</p></div></noscript>
   <main id="app"></main>
   <footer class="foot">
     <span>Questions? <a href="mailto:muhumuzabright26@gmail.com">muhumuzabright26@gmail.com</a> &middot; <a href="mailto:brytma616@gmail.com">brytma616@gmail.com</a> &middot; <a href="tel:+256759621612">0759 621 612</a></span>
-    <span>Free helpers &middot; <a href="https://github.com/muhumuza684/DELIGHT-MCP-SERVERS-" rel="noopener">For developers: source code</a></span>
+    <span>Free helpers and APIs &middot; <a href="https://github.com/muhumuza684/DELIGHT-MCP-SERVERS-" rel="noopener">For developers: source code</a></span>
   </footer>
 </div>
 
 <script>
-const REPO='https://github.com/muhumuza684/DELIGHT-MCP-SERVERS-';
 const DL_DIR='downloads/';
 const SUPPORT='muhumuzabright26@gmail.com';
-const WA='https://wa.me/256759621612?text=';
+const MAILTO='mailto:'+SUPPORT+'?subject=DELIGHT%20help&body=';
 const $=s=>document.querySelector(s);
 const esc=t=>String(t).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
 const OKI='<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>';
@@ -182,18 +209,14 @@ const OS_TILES=[
 
 /* ---- AIs ---- */
 const AIS=[
- {k:'claude',n:'Claude Desktop',d:'The Claude app on your computer',l:'Cl',local:'one',hosted:true,b:'b0'},
- {k:'claudeweb',n:'Claude on the web or phone',d:'claude.ai and the Claude mobile app',l:'Cw',local:null,hosted:true,b:'b0'},
- {k:'chatgpt',n:'ChatGPT',d:'OpenAI',l:'GP',local:null,hosted:true,b:'b3'},
- {k:'cursor',n:'Cursor',d:'AI code editor',l:'Cu',local:'guided',hosted:true,b:'b1'},
- {k:'copilot',n:'GitHub Copilot',d:'Inside VS Code',l:'GH',local:'guided',hosted:true,b:'b2'},
- {k:'claudecode',n:'Claude Code',d:'Terminal assistant',l:'CC',local:'guided',hosted:true,b:'b0'},
- {k:'other',n:'Another AI app',d:'Anything else',l:'+',local:null,hosted:true,b:'b3'}
+ {k:'claude',n:'Claude Desktop',d:'The Claude app on your computer',l:'Cl',mode:'one',b:'b0'},
+ {k:'chatgpt',n:'ChatGPT',d:'OpenAI',l:'GP',mode:'hosted',b:'b3'},
+ {k:'cursor',n:'Cursor',d:'AI code editor',l:'Cu',mode:'guided',b:'b1'},
+ {k:'copilot',n:'GitHub Copilot',d:'Inside VS Code',l:'GH',mode:'guided',b:'b2'},
+ {k:'claudecode',n:'Claude Code',d:'Terminal assistant',l:'CC',mode:'guided',b:'b0'},
+ {k:'other',n:'Another AI app',d:'Anything else',l:'+',mode:'hosted',b:'b3'}
 ];
-/* primary mode drives the screens: one-click, guided, or hosted-only */
-AIS.forEach(a=>{a.mode=a.local==='one'?'one':a.local==='guided'?'guided':'hosted';});
 const MODECHIP={one:'<span class="chip c-ok">One-click</span>',guided:'<span class="chip c-info">Guided</span>',hosted:'<span class="chip c-soon">Hosted soon</span>'};
-function modeChips(a){return '<span style="display:inline-flex;flex-direction:column;gap:4px;align-items:flex-end">'+(a.local?MODECHIP[a.mode]:'')+(a.hosted?'<span class="chip c-soon">Hosted soon</span>':'')+'</span>';}
 
 /* ---- the ten helpers ----
    oneclick: a double-click .mcpb file exists in /downloads.  The other four need more setup. */
@@ -249,8 +272,73 @@ const H=[
   can:['Search and read the pages and databases you share'],cant:['Change anything (read-only)','See pages you did not share'],
   know:'Very long pages may be cut off, and database queries return the first 20 rows by default.'}
 ];
-/* helpers that need your own computer can never be hosted */
-H.forEach(h=>{h.hostable=!(h.k==='files'||h.k==='database'||h.k==='browser');});
+
+/* ---- the eleven APIs: one zip each, a double-click START file inside.  port = the check page address ---- */
+/* APIs whose zip is uploaded to /downloads. Add a key here (e.g. 'sign') the day its zip goes live. */
+const READY_API=['sign','pay','upload'];
+const A=[
+ {k:'sign',name:'DELIGHT Sign-in',tag:'Let people sign up, log in and stay logged in.',port:4001,file:'delight-api-sign-in.zip',kw:'login sign up register account password users auth',
+  icon:'<circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/>',
+  can:['Sign people up and log them in','Keep them logged in safely, and log them out','Protect any page or action behind a login'],cant:['Send the sign-up email or text','Reset forgotten passwords yet'],
+  know:'People are saved in a small file on your computer. Passwords are scrambled, never kept as typed.',needs:'Nothing. It makes its own secret key.'},
+ {k:'aigate',name:'DELIGHT AI Gateway',tag:'Give each customer their own key to your AI, with a usage limit.',port:4002,file:'delight-api-ai-gateway.zip',kw:'ai chatgpt openai chatbot keys limits customers',
+  icon:'<path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/>',
+  can:['Make a key for each customer and set how many requests they get','Show each customer how much they used','Switch a key off any time'],cant:['Give real AI answers until you add your OpenAI key','Remember conversations by itself'],
+  know:'It starts in test mode with pretend answers, so trying it costs nothing. Add your OpenAI key in the .env file to go live.',needs:'Nothing to test. An OpenAI key to go live.'},
+ {k:'pay',name:'DELIGHT Pay',tag:'Take card and mobile money payments without ever charging twice.',port:4003,file:'delight-api-pay.zip',kw:'payments mobile money mtn airtel stripe card checkout',
+  icon:'<rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 10h18M7 15h4"/>',
+  can:['Start card (Stripe) and mobile money (MTN, Airtel) payments','Track each payment as waiting, paid or failed','Ignore repeat requests so nobody is charged twice'],cant:['Move real money while in test mode','Reach MTN or Airtel without your merchant account'],
+  know:'Test mode pretends to be the payment companies. Going live needs their keys and approval, and mobile money needs a short code step. We can do it with you.',needs:'Nothing to test. Stripe and mobile money accounts to go live.'},
+ {k:'msg',name:'DELIGHT Messages',tag:'Send SMS and email from one place and see if they arrived.',port:4004,file:'delight-api-messages.zip',kw:'sms email text message notify otp alerts',
+  icon:'<path d="M4 5h16v11H8l-4 4z"/>',
+  can:['Send an SMS or an email with one request','Keep a log of everything sent','Record delivered or failed'],cant:['Send real messages while in test mode','Send later on a schedule'],
+  know:'Test mode logs messages without sending them. Add your SMS and email accounts (for example Africa\u2019s Talking) to go live.',needs:'Nothing to test. SMS and email accounts to go live.'},
+ {k:'upload',name:'DELIGHT Uploads',tag:'Upload files, shrink pictures and make PDFs.',port:4005,file:'delight-api-uploads.zip',kw:'upload files images resize pdf photos documents',
+  icon:'<path d="M12 16V4M7 9l5-5 5 5M4 20h16"/>',
+  can:['Accept file uploads up to a size you set','Make small copies of pictures','Create simple PDFs from text'],cant:['Make designed PDFs like invoices yet','Keep files online: they stay on your computer'],
+  know:'Files are saved in a folder beside the API. For many customers, move storage online.',needs:'Nothing.'},
+ {k:'mailcheck',name:'DELIGHT Email Check',tag:'Check an email is real, then confirm it with a code.',port:4006,file:'delight-api-email-check.zip',kw:'email verify validate code otp fake spam',
+  icon:'<rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/>',
+  can:['Spot mistyped, fake and throwaway emails','Check the email\u2019s domain can really receive mail','Make and check 6-digit confirmation codes'],cant:['Email the code by itself','Prove one exact inbox exists'],
+  know:'Pair it with DELIGHT Messages to email the code. In test mode the code shows on screen: turn that off before going live.',needs:'Nothing.'},
+ {k:'databuild',name:'DELIGHT Data Builder',tag:'Describe your data once and get a full working API.',port:4007,file:'delight-api-data-builder.zip',kw:'data records crud products customers database schema',
+  icon:'<ellipse cx="12" cy="6" rx="8" ry="3"/><path d="M4 6v6c0 1.7 3.6 3 8 3s8-1.3 8-3V6M4 12v6c0 1.7 3.6 3 8 3s8-1.3 8-3v-6"/>',
+  can:['Add, read, change and delete records for any list you describe','Search, filter and page through results','Check every entry is the right type'],cant:['Link records to each other automatically','Follow special rules without a little code'],
+  know:'You describe your data in one small file (schema.json), start again, and it appears. Products and customers are included as examples.',needs:'Nothing. A text editor to describe your data.'},
+ {k:'book',name:'DELIGHT Bookings',tag:'Let people book a time, with no double-booking.',port:4008,file:'delight-api-bookings.zip',kw:'booking appointments schedule calendar clinic salon',
+  icon:'<rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/>',
+  can:['Set up staff or rooms and the services they offer','Show which times are free','Refuse a booking that overlaps, and free the time if cancelled'],cant:['Send reminders by itself','Repeat a booking every week'],
+  know:'Opening hours are set in the .env file. The default is 9 to 5, in 30 minute steps.',needs:'Nothing.'},
+ {k:'pagedata',name:'DELIGHT Page Data',tag:'Pull the title, headings and links from public web pages.',port:4009,file:'delight-api-page-data.zip',kw:'scrape web pages data prices links extract',
+  icon:'<circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18"/>',
+  can:['Read a public page and return its title, headings and links','Pick out exact items you choose, like a price','Remember results for an hour'],cant:['Open private or local addresses','Read pages that only build themselves in a browser'],
+  know:'Some sites block automated readers. Follow each site\u2019s rules, and do not copy other people\u2019s content.',needs:'Nothing.'},
+ {k:'stats',name:'DELIGHT Stats',tag:'Count what people do and get simple reports.',port:4010,file:'delight-api-stats.zip',kw:'analytics stats events tracking reports views purchases',
+  icon:'<path d="M4 20V10M10 20V4M16 20v-8M22 20H2"/>',
+  can:['Record events like sign-ups, page views and purchases','Show totals, unique people and busiest days','Rank the most common values, like top pages'],cant:['Draw charts: it gives you the numbers','Follow people through multi-step funnels'],
+  know:'It takes up to 500 events in one go. For very busy sites, move to a bigger database.',needs:'Nothing.'},
+ {k:'starter',name:'DELIGHT Starter',tag:'A ready foundation for building any new API.',port:4000,file:'delight-api-starter.zip',kw:'starter template base foundation custom developer new project',
+  icon:'<path d="M12 3l9 5-9 5-9-5zM3 13l9 5 9-5"/>',
+  can:['Start any new API with errors, logs, limits and security already done','Switch between one simple key or a login per person'],cant:['Do anything useful by itself: it is a base for developers'],
+  know:'For developers. It is the base the other ten are built on.',needs:'Nothing, but you will want some coding.'}
+];
+A.forEach(a=>{a.ready=READY_API.indexOf(a.k)>=0;});
+
+const AISSUES=[
+ {k:'closed',t:'The window closed straight away',f:function(){return 'Node.js is probably missing. Install it from nodejs.org (the LTS button), then start again.';}},
+ {k:'port',t:'It says the address is busy',f:function(){return 'Another DELIGHT window is still open. Close all of them, then start this one again.';}},
+ {k:'page',t:'The check page will not open',f:function(){return 'Make sure the black START window is still open. Then open the check link again.';}},
+ {k:'error',t:'It shows an error',f:function(){return 'Delete the file named .env in the folder and start again. It makes a fresh one.';}}
+];
+const mk=(k,t,d,a)=>({k:k,t:function(){return t;},d:d,a:function(){return a;}});
+const AHUB=[
+ mk('start','How do I start it?','Two minutes','Download the zip and unpack it. Windows: double-click START.bat. Mac: double-click START.command. A black window opens and stays open. That window is your API running.'),
+ mk('node','What is Node.js?','Free, installed once','It is the free engine that runs these APIs. Install the LTS version from nodejs.org once, then start again. START tells you if it is missing.'),
+ mk('test','What is test mode?','Safe to try','AI, payments, SMS and email use pretend providers, so you can try everything for free. Add your real accounts in the .env file to go live.'),
+ mk('key','Where is my secret key?','Made for you','The START window shows it, and it is saved in the file named .env in the folder. Keep it private.'),
+ mk('live','How do customers use it?','Going online','Right now it runs on your computer. For customers to reach it, it must be put on a server. Email us and we do it with you.'),
+ mk('mac','START.command will not open','Mac only','Right-click START.command, choose Open, then Open again. Still stuck? Email us.')
+];
 const ISSUES=[
  {k:'nothing',t:'Nothing appeared',f:function(){return 'Fully quit the AI app: '+OSX[S.os].quit+'. Then open it again.';}},
  {k:'file',t:'It cannot find my file',f:function(){return 'Check the file is inside the folder you picked (for example '+OSX[S.os].path+') and saved as .csv. Then ask again.';}},
@@ -261,43 +349,45 @@ const HUB=[
  {k:'connect',t:function(){return 'Connect a helper to '+(S.ai?aiN():'your AI');},d:'Two minutes',a:function(){return 'Pick a helper, click Connect, then follow the steps one at a time. We show only the next step, so you cannot get lost.';}},
  {k:'folder',t:function(){return 'Pick a folder';},d:'Keep your AI inside the lines',a:function(){return 'Make a folder just for your AI, such as '+OSX[S.os||'win'].path+', and copy in only what you want it to see. Pick that folder when asked.';}},
  {k:'key',t:function(){return 'Paste a key';},d:'Where to find it',a:function(){return 'A key is a long password a service gives you. Make a read-only one when you can, paste it when asked, and never share it in a chat.';}},
- {k:'signin',t:function(){return 'Sign in to Slack, Drive or Notion';},d:'One time only',a:function(){return 'These three need your own small app with the company, then a one-time sign-in link. Each uses a local return address you register in its developer settings: http://127.0.0.1:8734/callback for Slack, 8735 for Drive and 8736 for Notion. Easiest: message us and we set it up with you.';}},
- {k:'where',t:function(){return 'Local or hosted?';},d:'What is the difference',a:function(){return 'Local helpers run on your computer: free, private and available today. Hosted helpers will run on our servers: nothing to install and they work from any device, but they can not open files on your computer, and they are not open yet. Some AI apps, such as ChatGPT and Claude on the web, can only use hosted helpers.';}},
- {k:'hand',t:function(){return 'Set it up by hand';},d:'For developers',a:function(){return 'Open a helper, choose Connect, then open "Set it up by hand". You need Node.js 18 or newer. Run npm install and npm run build in the helper\u2019s folder, then paste the settings text into your AI app and restart it.';}},
- {k:'wrong',t:function(){return 'Something is wrong';},d:'Quick fixes',a:function(){return 'Fully quit your AI app ('+OSX[S.os||'win'].quit+') and open it again. Check your file is inside your folder. Still stuck? Send us a screenshot on WhatsApp.';}},
+ {k:'signin',t:function(){return 'Sign in to Slack, Drive or Notion';},d:'One time only',a:function(){return 'These three need your own small app with the company, then a one-time sign-in link. Each uses a local return address you register in its developer settings: http://127.0.0.1:8734/callback for Slack, 8735 for Drive and 8736 for Notion. Easiest: email us and we set it up with you.';}},
+ {k:'wrong',t:function(){return 'Something is wrong';},d:'Quick fixes',a:function(){return 'Fully quit your AI app ('+OSX[S.os||'win'].quit+') and open it again. Check your file is inside your folder. Still stuck? Email us a screenshot.';}},
  {k:'priv',t:function(){return 'What is shared?';},d:'In plain words',a:function(){return 'Your files stay on your computer. When you ask a question, the parts needed to answer it go to your AI company. Never include personal names.';}}
 ];
 
-const S={step:'os',os:null,ai:null,tab:'helpers',q:'',sel:'files',flow:false,stage:0,bad:false,issue:null,hub:null,chat:false,guess:null};
+const S={step:'path',path:null,os:null,ai:null,tab:'helpers',q:'',sel:'files',flow:false,stage:0,bad:false,issue:null,hub:null,chat:false,guess:null};
 const aiO=()=>AIS.find(a=>a.k===S.ai);
 const aiN=()=>aiO()?aiO().n:'your AI';
-const helper=()=>H.find(h=>h.k===S.sel);
-const fit=h=>{const a=aiO(); if(!a) return '';
-  if(a.mode==='hosted') return h.hostable?'<span class="chip c-soon">Hosted soon</span>':'<span class="chip c-adv">Needs your computer</span>';
-  if(a.mode==='one') return h.oneclick?'<span class="chip c-ok">Works with '+esc(a.n)+'</span>':'<span class="chip c-adv">Needs more setup</span>';
-  return '<span class="chip c-info">Guided setup</span>';};
-function subLabel(h){const a=aiO(); if(a&&a.mode==='hosted') return h.hostable?'Free \u00b7 hosted soon':'Needs your computer'; return h.oneclick?'Free \u00b7 one-click':'Free \u00b7 more setup';}
+const SRC=()=>S.path==='api'?A:H;
+const helper=()=>SRC().find(h=>h.k===S.sel);
+const fit=h=>{const a=aiO(); if(!a) return ''; if(a.mode==='one') return h.oneclick?'<span class="chip c-ok">Works with '+esc(a.n)+'</span>':'<span class="chip c-adv">Needs more setup</span>'; if(a.mode==='guided') return '<span class="chip c-info">Guided setup</span>'; return '<span class="chip c-soon">Hosted soon</span>';};
 
 /* ===== first screens ===== */
+function sPath(){
+  return '<section class="hello"><h1>What do you want to do?</h1><p>Two doors. <b>MCP</b> gives your AI new abilities. <b>API</b> gives your app a ready-made back-end.</p></section>'+
+  '<div class="tiles">'+
+  '<button class="big" data-act="path" data-k="mcp"><span class="row" style="margin:0"><span class="chip c-here">MCP</span><span class="chip c-info">'+H.length+' helpers</span></span><span class="ic">'+ico('<path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/>',32)+'</span><span><b>Give my AI new abilities</b><span class="d">Free helpers so Claude and other AI apps can use your files, web pages, Slack and more.</span></span></button>'+
+  '<button class="big" data-act="path" data-k="api"><span class="row" style="margin:0"><span class="chip c-here">API</span><span class="chip '+(READY_API.length?'c-info':'c-soon')+'">'+(READY_API.length?READY_API.length+' ready':A.length+' coming soon')+'</span></span><span class="ic">'+ico('<path d="M8 7l-5 5 5 5M16 7l5 5-5 5"/>',32)+'</span><span><b>Get a ready-made API</b><span class="d">Working back-ends for your app or business: sign-in, payments, bookings and more.</span></span></button></div>'+
+  '<p class="note">Not sure? Want your AI to do more for you: pick <b>MCP</b>. Building an app, website or business system: pick <b>API</b>.</p>';
+}
 function sOS(){
   const order=OS_TILES.slice().sort((a,b)=>(a.k===S.guess?-1:0)-(b.k===S.guess?-1:0));
-  return '<section class="hello"><h1>Give your AI new abilities.</h1><p>Two taps to start. First: what computer are you on?</p></section>'+
+  return '<section class="hello"><h1>'+(S.path==='api'?'Get a ready-made API.':'Give your AI new abilities.')+'</h1><p>Two taps to start. First: what computer are you on?</p></section>'+
   '<div class="tiles">'+order.map(t=>'<button class="big" data-act="os" data-k="'+t.k+'" aria-pressed="'+(S.guess===t.k)+'"><span class="ic">'+ico(t.icon,32)+'</span><span><b>'+OSN[t.k]+'</b><span class="d">'+t.d+'</span></span>'+(S.guess===t.k?'<span class="chip c-here">Looks like yours</span>':'')+'</button>').join('')+'</div>'+
-  '<p class="note"><button class="link" data-act="osother">Something else</button></p>';
+  '<p class="note"><button class="link" data-act="osother">Something else</button> </p>';
 }
 function sOther(){
   return '<section class="hello"><h1>Let us help you by hand.</h1><p>Most AI apps support Windows and Mac first. For other systems we set things up with you.</p></section>'+
-  '<div class="row"><a class="btn pri" href="'+WA+encodeURIComponent('Hello, I use a different computer system and would like help with DELIGHT.')+'" target="_blank" rel="noopener">Ask us on WhatsApp</a><button class="btn ghost" data-act="chgos">Back</button></div>';
+  '<div class="row"><a class="btn pri" href="'+MAILTO+encodeURIComponent('Hello, I use a different computer system and would like help with DELIGHT.')+'">Email us</a><button class="btn ghost" data-act="chgos">Back</button></div>';
 }
 function sPhone(){
   const link='https://wa.me/?text='+encodeURIComponent('DELIGHT: open this on your computer. '+location.href);
-  return '<section class="hello"><h1>These helpers work on a computer.</h1><p>Your phone can not run them yet. Send this page to your computer and carry on there.</p></section>'+
+  return '<section class="hello"><h1>'+(S.path==='api'?'These APIs run on a computer.':'These helpers work on a computer.')+'</h1><p>Your phone can not run them yet. Send this page to your computer and carry on there.</p></section>'+
   '<div class="panel"><h2>Send it to your computer</h2><div class="row"><a class="btn pri" href="'+link+'" target="_blank" rel="noopener">Send by WhatsApp</a><button class="btn ghost" data-act="copy" data-text="'+esc(location.href)+'">Copy the link</button></div>'+
   '<p class="note">A phone version is on our list. Leave your email and we will tell you when it is ready.</p><div class="row"><a class="btn ghost" href="mailto:'+SUPPORT+'?subject=Notify%20me%3A%20DELIGHT%20on%20phone">Tell me when it is ready</a><button class="btn ghost" data-act="chgos">I am on a computer</button></div></div>';
 }
 function sAI(){
-  return '<section class="hello"><h1>Which AI do you use?</h1><p>One tap. Some AI apps can only use hosted helpers, which are coming soon.</p></section>'+
-  '<div class="tiles">'+AIS.map(a=>'<button class="ai" data-act="ai" data-k="'+a.k+'"><span class="bd '+a.b+'">'+a.l+'</span><span class="tx"><b>'+a.n+'</b><span class="d">'+a.d+'</span></span>'+modeChips(a)+'</button>').join('')+
+  return '<section class="hello"><h1>Which AI do you use?</h1><p>One tap. We show only what works for you.</p></section>'+
+  '<div class="tiles">'+AIS.map(a=>'<button class="ai" data-act="ai" data-k="'+a.k+'"><span class="bd '+a.b+'">'+a.l+'</span><span class="tx"><b>'+a.n+'</b><span class="d">'+a.d+'</span></span>'+MODECHIP[a.mode]+'</button>').join('')+
   '<button class="ai" data-act="noai" style="border-style:dashed"><span class="bd" style="background:#EDEFF5;color:#475569">?</span><span class="tx"><b>I do not use one yet</b><span class="d">We will help you start for free</span></span></button></div>';
 }
 function sNoAI(){
@@ -307,38 +397,42 @@ function sNoAI(){
   '<div class="row"><button class="btn pri" data-act="ai" data-k="claude">I have it, continue</button><button class="btn ghost" data-act="chgai">Back</button></div></div>';
 }
 
-/* ===== the helper directory ===== */
+/* ===== the directory (helpers and APIs share the list and the steps) ===== */
 function recap(){
   const a=aiO();
   return '<div class="recap"><span class="rc"><small>Computer</small><b>'+OSN[S.os]+'</b><button class="chg" data-act="chgos">Change</button></span>'+
-   '<span class="rc"><small>AI</small><b>'+esc(a.n)+'</b>'+modeChips(a)+'<button class="chg" data-act="chgai">Change</button></span></div>';
+   '<span class="rc"><small>AI</small><b>'+esc(a.n)+'</b>'+MODECHIP[a.mode]+'<button class="chg" data-act="chgai">Change</button></span>'+
+   '<span class="rc"><small>You chose</small><b>MCP: AI helpers</b><button class="chg" data-act="chgpath">Change</button></span></div>';
 }
 function listHTML(){
   const q=S.q.trim().toLowerCase();
-  const list=H.filter(h=>!q||(h.name+' '+h.tag+' '+h.kw).toLowerCase().indexOf(q)>=0);
-  if(!list.length) return '<li class="note" style="margin:6px 4px">No match. <a href="'+WA+encodeURIComponent('Hello, I am looking for a helper that can: '+S.q)+'" target="_blank" rel="noopener">Tell us what you need</a>.</li>';
-  return list.map(h=>'<li><button class="li" data-act="pick" data-k="'+h.k+'" aria-pressed="'+(S.sel===h.k)+'"><span class="ic">'+ico(h.icon,24)+'</span><span><b>'+h.name+'</b><span class="d">'+subLabel(h)+'</span></span></button></li>').join('');
+  const list=SRC().filter(h=>!q||(h.name+' '+h.tag+' '+h.kw).toLowerCase().indexOf(q)>=0);
+  if(!list.length) return '<li class="note" style="margin:6px 4px">No match. <a href="'+MAILTO+encodeURIComponent('Hello, I am looking for something that can: '+S.q)+'">Tell us what you need</a>.</li>';
+  return list.map(h=>'<li><button class="li" data-act="pick" data-k="'+h.k+'" aria-pressed="'+(S.sel===h.k)+'"><span class="ic">'+ico(h.icon,24)+'</span><span><b>'+h.name+'</b><span class="d">'+(h.port?(h.ready?'Free \u00b7 ready to run':'Coming soon'):h.oneclick?'Free \u00b7 one-click':'Free \u00b7 more setup')+'</span></span></button></li>').join('');
 }
 function detailHTML(){
   const h=helper(), a=aiO();
   let cta;
-  const notify='<a class="btn pri" href="mailto:'+SUPPORT+'?subject='+encodeURIComponent('Notify me: hosted DELIGHT for '+a.n)+'">Tell me when it is ready</a>';
   if(a.mode==='one') cta='<button class="btn blue" data-act="connect">'+(h.oneclick?'Connect to '+esc(a.n):'Set it up')+'</button>';
   else if(a.mode==='guided') cta='<button class="btn blue" data-act="connect">Get help connecting</button>';
-  else cta=h.hostable?notify:'<button class="btn blue" data-act="usedesktop">Use Claude Desktop for this one</button>';
-  let where='';
-  if(a.mode==='hosted') where=h.hostable
-    ?'<div class="know" style="background:var(--blue-l);color:var(--blue-d)"><b>Hosted only.</b> '+esc(a.n)+' can only use helpers that run on our servers. Those are not open yet. Leave your email and we will tell you the moment they are.</div>'
-    :'<div class="know"><b>Needs your computer.</b> This helper works with files or programs on your own computer, so it can not be hosted. '+esc(a.n)+' can not run it. You can use it with Claude Desktop today.</div>';
-  else if(a.hosted) where=h.hostable
-    ?'<p class="note">Prefer not to install anything? A hosted version is coming soon. <a href="mailto:'+SUPPORT+'?subject='+encodeURIComponent('Notify me: hosted '+h.name)+'">Tell me when it is ready</a></p>'
-    :'<p class="note">This one always runs on your computer, because it needs your files or programs.</p>';
+  else cta='<a class="btn pri" href="mailto:'+SUPPORT+'?subject='+encodeURIComponent('Notify me: hosted DELIGHT for '+a.n)+'">Tell me when it is ready</a>';
   return '<div class="hd"><span class="ic">'+ico(h.icon,34)+'</span><div><h2>'+h.name+'</h2><p class="tag">'+h.tag+'</p></div></div>'+
-   '<div class="row">'+cta+'<span class="chip c-ok">Free</span>'+fit(h)+'</div>'+where+
+   '<div class="row">'+cta+'<span class="chip c-ok">Free</span>'+fit(h)+'</div>'+
    '<div class="cols2"><div class="sec"><h3>It can</h3><ul>'+h.can.map(i=>'<li>'+OKI+'<span>'+esc(i)+'</span></li>').join('')+'</ul></div><div class="sec"><h3>It cannot</h3><ul>'+h.cant.map(i=>'<li class="no">'+NOI+'<span>'+esc(i)+'</span></li>').join('')+'</ul></div></div>'+
    '<div class="know"><b>Good to know:</b> '+esc(h.know)+'</div>'+
    '<div class="sec"><h3>What you need</h3><ul><li>'+OKI+'<span>'+esc(h.needs)+'</span></li></ul></div>'+
    '<div class="sec"><h3>Privacy and support</h3><ul><li>'+OKI+'<span>Your files stay on your computer.</span></li><li>'+OKI+'<span>Support: '+SUPPORT+'</span></li></ul></div>'+
+   '<div class="rev"><b>Reviews:</b> none yet. We will not invent any.</div>';
+}
+function adetailHTML(){
+  const h=helper();
+  return '<div class="hd"><span class="ic">'+ico(h.icon,34)+'</span><div><h2>'+h.name+'</h2><p class="tag">'+h.tag+'</p></div></div>'+
+   '<div class="row">'+(h.ready?'<button class="btn blue" data-act="connect">Get '+esc(h.name)+'</button><span class="chip c-ok">Free</span><span class="chip c-info">Test mode included</span>':'<a class="btn pri" href="'+MAILTO+encodeURIComponent('Notify me: '+h.name+' is ready')+'">Tell me when it is ready</a><span class="chip c-soon">Coming soon</span>')+'</div>'+
+   '<div class="cols2"><div class="sec"><h3>It can</h3><ul>'+h.can.map(i=>'<li>'+OKI+'<span>'+esc(i)+'</span></li>').join('')+'</ul></div><div class="sec"><h3>It cannot</h3><ul>'+h.cant.map(i=>'<li class="no">'+NOI+'<span>'+esc(i)+'</span></li>').join('')+'</ul></div></div>'+
+   '<div class="know"><b>Good to know:</b> '+esc(h.know)+'</div>'+
+   '<div class="sec"><h3>What you need</h3><ul><li>'+OKI+'<span>Node.js, free and installed once.</span></li><li>'+OKI+'<span>'+esc(h.needs)+'</span></li></ul></div>'+
+   '<div class="sec"><h3>Privacy and support</h3><ul><li>'+OKI+'<span>It runs on your computer. Your data stays with you.</span></li><li>'+OKI+'<span>Support: '+SUPPORT+'</span></li></ul></div>'+
+   '<details class="dev"><summary>For developers</summary><ol><li>Open <code>README.md</code> in the folder: every request, and what to change for each client.</li><li>Import <code>postman_collection.json</code> into Postman to click-test it.</li><li>It runs on <code>http://localhost:'+h.port+'</code>. Change the port and keys in <code>.env</code>.</li></ol></details>'+
    '<div class="rev"><b>Reviews:</b> none yet. We will not invent any.</div>';
 }
 function acts(rows){
@@ -346,57 +440,52 @@ function acts(rows){
    return '<li class="act '+st+'"><span class="an">'+(st==='done'?OKI:i+1)+'</span><div class="ab"><h3>'+r.t+'</h3>'+(st==='done'?'<p class="sm2">'+r.sum+'</p>':st==='active'?r.body:'')+'</div></li>';}).join('')+'</ol>';
 }
 function fixHTML(){
-  const c=ISSUES.find(i=>i.k===S.issue);
-  return '<div class="fix"><b>What happened?</b><div class="fixg">'+ISSUES.map(i=>'<button data-act="issue" data-k="'+i.k+'" aria-pressed="'+(S.issue===i.k)+'">'+i.t+'</button>').join('')+'</div>'+
-   (c?'<div class="fixa"><b>Try this:</b> '+esc(c.f())+'</div><div class="row"><button class="btn good" data-act="fixed">That fixed it</button><a class="btn ghost" href="'+WA+encodeURIComponent('Hello, I need help. Problem: '+c.t+'. Helper: '+helper().name+'. Computer: '+OSN[S.os]+'. AI: '+aiN()+'.')+'" target="_blank" rel="noopener">Still stuck? Send to us</a></div>':'')+'</div>';
-}
-function configText(h,a){
-  const X=OSX[S.os]; const e={command:'node',args:[X.cfg(h.folder)]}; if(a.k==='copilot') e.type='stdio';
-  const env={}; Object.keys(h.env).forEach(k=>{env[k]=h.env[k]==='@FOLDER'?X.ex:h.env[k];});
-  if(Object.keys(env).length) e.env=env;
-  const o={}; o[h.k]=e; const w={}; w[a.k==='copilot'?'servers':'mcpServers']=o;
-  return JSON.stringify(w,null,2);
-}
-function placeText(a){
-  if(a.k==='cursor') return 'Save this in a file called <code>mcp.json</code> inside your <code>.cursor</code> folder (in your user folder for all projects, or in your project for one). Fix the path, then restart Cursor.';
-  if(a.k==='copilot') return 'Save this as <code>.vscode/mcp.json</code> in your project. Fix the path, then use Copilot Chat in Agent mode.';
-  if(a.k==='claudecode') return 'Save this as a file called <code>.mcp.json</code> in your project folder (or use the <code>claude mcp add</code> command). Fix the path, then restart Claude Code.';
-  return 'Open the tool settings in '+esc(a.n)+', paste this, fix the path, and restart '+esc(a.n)+'.';
-}
-function byHand(h,a){
-  const cfg=configText(h,a);
-  return '<details class="dev"><summary>Set it up by hand (for developers)</summary><ol>'+
-   '<li>Download the helper: <a href="https://download-directory.github.io/?url='+REPO+'/tree/main/'+h.folder+'" target="_blank" rel="noopener">Download .zip</a> or <a href="'+REPO+'/tree/main/'+h.folder+'" target="_blank" rel="noopener">view the source</a>.</li>'+
-   '<li>Unzip it, open a terminal in that folder, and run <code>npm install</code> then <code>npm run build</code>. You need Node.js 18 or newer.</li>'+
-   '<li>'+placeText(a)+'</li></ol>'+
-   '<pre>'+esc(cfg)+'</pre><button class="btn ghost sm" data-act="copy" data-text="'+esc(cfg)+'">Copy settings</button>'+
-   (h.signin?'<p class="note">Sign-in: register <code>http://127.0.0.1:'+h.signin+'/callback</code> as the return address in the developer settings. On first run the helper prints a sign-in link in its log. Open it, approve, and the token is saved on your computer.</p>':'')+
-   '<p style="height:10px"></p></details>';
+  const L=S.path==='api'?AISSUES:ISSUES;
+  const c=L.find(i=>i.k===S.issue);
+  return '<div class="fix"><b>What happened?</b><div class="fixg">'+L.map(i=>'<button data-act="issue" data-k="'+i.k+'" aria-pressed="'+(S.issue===i.k)+'">'+i.t+'</button>').join('')+'</div>'+
+   (c?'<div class="fixa"><b>Try this:</b> '+esc(c.f())+'</div><div class="row"><button class="btn good" data-act="fixed">That fixed it</button><a class="btn ghost" href="'+MAILTO+encodeURIComponent('Hello, I need help. Problem: '+c.t+'. Helper: '+helper().name+'. Computer: '+OSN[S.os]+(S.path==='api'?'.':'. AI: '+aiN()+'.'))+'">Still stuck? Send to us</a></div>':'')+'</div>';
 }
 function flowHTML(){
   const h=helper(), a=aiO(), X=OSX[S.os];
   let body;
   if(a.mode==='one'&&h.oneclick){
     if(S.stage>=4){
-      body='<div class="win"><div class="ck">'+BIGOK+'</div><h2>You are connected.</h2><p class="note">'+esc(h.name)+' now works in '+esc(a.n)+'.</p><div class="row" style="justify-content:center"><button class="btn pri" data-act="more">Add another helper</button><a class="btn ghost" href="'+WA+encodeURIComponent('Hello, I am connected to '+h.name+' and have a question.')+'" target="_blank" rel="noopener">Ask us anything</a></div></div>';
+      body='<div class="win"><div class="ck">'+BIGOK+'</div><h2>You are connected.</h2><p class="note">'+esc(h.name)+' now works in '+esc(a.n)+'.</p><div class="row" style="justify-content:center"><button class="btn pri" data-act="more">Add another helper</button><a class="btn ghost" href="'+MAILTO+encodeURIComponent('Hello, I am connected to '+h.name+' and have a question.')+'">Ask us anything</a></div></div>';
     }else{
       body=acts([
        {t:'Download',sum:'Downloaded',body:'<p class="t2">One small file. It works on '+(S.os==='mac'?'your Mac':'your Windows PC')+'.</p>'+
-          (S.os==='mac'?'<p class="t2">Mac note: we have tested on Windows so far. If anything looks different on your Mac, message us and we will sort it out.</p>':'')+
+          (S.os==='mac'?'<p class="t2">Mac note: we have tested on Windows so far. If anything looks different on your Mac, email us and we will sort it out.</p>':'')+
           '<div class="go"><a class="btn blue" data-act="adv" href="'+DL_DIR+h.file+'" download>Download '+h.file+'</a></div>'},
-       {t:'Open it',sum:'Installed',body:'<p class="t2">Open '+X.fm+', go to your '+X.dl+', and double-click <b>'+h.file+'</b>. '+esc(a.n)+' asks to install it. Click <b>Install</b>.</p><p class="t2">If double-clicking does nothing, open '+esc(a.n)+', go to Settings, then Extensions, and drag the file into the window.</p><div class="go"><button class="btn blue" data-act="adv">I clicked Install</button></div>'},
+       {t:'Open it',sum:'Installed',body:'<p class="t2">Open '+esc(a.n)+', go to <b>Settings</b>, then <b>Extensions</b>. Drag <b>'+h.file+'</b> from your '+X.dl+' into that window, then click <b>Install</b>.</p><p class="t2">No place to drag it? In Extensions, choose <b>Advanced settings</b>, then <b>Install Extension</b>, and pick the file.</p><p class="t2">Double-clicking the file works on some computers. If Windows asks which app to open it with, close that box and use the steps above. Do not pick Word or Notepad.</p><div class="go"><button class="btn blue" data-act="adv">I clicked Install</button></div>'},
        {t:'Answer its question',sum:'Done',body:'<p class="t2">'+(h.asks?'It will ask you to '+esc(h.asks)+'.':'There is nothing to answer for this helper.')+'</p><div class="go"><button class="btn blue" data-act="adv">Done</button></div>'},
        {t:'Try it',sum:'',body:'<p class="t2">Ask '+esc(a.n)+' this:</p><div class="say"><q>'+esc(h.say)+'</q><button class="btn ghost sm" data-act="copy" data-text="'+esc(h.say)+'">Copy</button></div><div class="two"><button class="btn good" data-act="worked">It worked</button><button class="btn badb" data-act="wrong">Something is wrong</button></div>'+(S.bad?fixHTML():'')}
       ]);
     }
   }else if(a.mode==='one'){
     body='<div class="know" style="margin-top:14px"><b>This one needs a little more setup.</b> '+esc(h.why)+' The quickest way is to let us do it with you.</div>'+
-     '<div class="row"><a class="btn pri" href="'+WA+encodeURIComponent('Hello, please help me set up "'+h.name+'" in '+a.n+'. Computer: '+OSN[S.os]+'.')+'" target="_blank" rel="noopener">Set it up with me on WhatsApp</a></div>'+byHand(h,a);
+     '<div class="row"><a class="btn pri" href="'+MAILTO+encodeURIComponent('Hello, please help me set up "'+h.name+'" in '+a.n+'. Computer: '+OSN[S.os]+'.')+'">Set it up with me by email</a></div>';
   }else{
     body='<div class="panel" style="margin-top:14px;background:#0F172A;color:#fff;border-color:#0F172A"><h3 style="color:#fff">DELIGHT Setup helper <span class="chip c-soon" style="color:#D6DEF5;border-color:#7C8BB5">Coming soon</span></h3><p style="color:#D6DEF5;margin-top:8px">One small app that connects '+esc(h.name)+' to '+esc(a.n)+' for you.</p></div>'+
-     '<div class="row"><a class="btn pri" href="'+WA+encodeURIComponent('Hello, please help me connect "'+h.name+'" to '+a.n+'. Computer: '+OSN[S.os]+'.')+'" target="_blank" rel="noopener">Set it up with me on WhatsApp</a></div>'+byHand(h,a);
+     '<div class="row"><a class="btn pri" href="'+MAILTO+encodeURIComponent('Hello, please help me connect "'+h.name+'" to '+a.n+'. Computer: '+OSN[S.os]+'.')+'">Set it up with me by email</a></div>';
   }
   return '<div class="det"><button class="link" data-act="cancel">\u2190 Back to '+esc(h.name)+'</button><h2 style="margin-top:6px">Connect '+esc(h.name)+' to '+esc(a.n)+'</h2>'+body+'</div>';
+}
+function aflowHTML(){
+  const h=helper(), X=OSX[S.os], win=S.os==='win', start=win?'START.bat':'START.command', url='http://localhost:'+h.port+'/health';
+  let body;
+  if(S.stage>=4){
+    body='<div class="win"><div class="ck">'+BIGOK+'</div><h2>Your API is running.</h2><p class="note">'+esc(h.name)+' works on your computer. For customers to use it, it needs to go online.</p><div class="row" style="justify-content:center"><a class="btn pri" href="'+MAILTO+encodeURIComponent('Hello, I have '+h.name+' running and want to put it online.')+'">Put it online with us</a><button class="btn ghost" data-act="more">Add another API</button></div></div>';
+  }else{
+    body=acts([
+     {t:'Download',sum:'Downloaded',body:'<p class="t2">One zip with everything inside. You also need <a href="https://nodejs.org" target="_blank" rel="noopener">Node.js</a>, which is free and installed once. Already have it? Carry on.</p>'+
+        (S.os==='mac'?'<p class="t2">Mac note: we have tested on Windows so far. If anything looks different on your Mac, email us and we will sort it out.</p>':'')+
+        '<div class="go"><a class="btn blue" data-act="adv" href="'+DL_DIR+h.file+'" download>Download '+h.file+'</a></div>'},
+     {t:'Start it',sum:'Started',body:'<p class="t2">'+(win?'Open '+X.fm+', go to your '+X.dl+', right-click <b>'+h.file+'</b> and choose <b>Extract All</b>.':'Open '+X.fm+', go to your '+X.dl+' and double-click <b>'+h.file+'</b> to unpack it.')+' Open the new folder and double-click <b>'+start+'</b>.</p><p class="t2">A black window opens and stays open. That window is your API running. '+(win?'If Windows asks whether to run it, choose Run.':'If macOS blocks it, right-click '+start+', choose Open, then Open again.')+'</p><div class="go"><button class="btn blue" data-act="adv">It is running</button></div>'},
+     {t:'Check it',sum:'Alive',body:'<p class="t2">Open this link. You should see the word <b>ok</b>.</p><div class="say"><q>'+url+'</q><a class="btn ghost sm" href="'+url+'" target="_blank" rel="noopener">Open</a></div><div class="go"><button class="btn blue" data-act="adv">I see ok</button></div>'},
+     {t:'Use it',sum:'',body:'<p class="t2">Your secret key is shown in the black window and saved in the file <code>.env</code>. Inside the folder, <code>postman_collection.json</code> lets you click-test every request.</p><div class="two"><button class="btn good" data-act="worked">It worked</button><button class="btn badb" data-act="wrong">Something is wrong</button></div>'+(S.bad?fixHTML():'')}
+    ]);
+  }
+  return '<div class="det"><button class="link" data-act="cancel">\u2190 Back to '+esc(h.name)+'</button><h2 style="margin-top:6px">Get '+esc(h.name)+' running</h2>'+body+'</div>';
 }
 function chatHTML(){
   const a=aiO(), h=H[0], c=S.chat;
@@ -405,9 +494,10 @@ function chatHTML(){
      :'<div class="aib">I can answer this by reading your sheet, if you connect a file helper.<div class="sug"><span style="width:44px;height:44px;border-radius:12px;background:#fff;color:var(--blue);display:grid;place-items:center">'+ico(h.icon,24)+'</span><div style="flex:1;min-width:180px"><b>DELIGHT Files</b><br><span style="color:var(--muted);font-size:14.5px">Reads files in one folder you choose. Free.</span></div><button class="btn blue sm" data-act="chatconn">Connect</button><button class="btn ghost sm" data-act="chatno">Not now</button></div></div>')+'</div>';
 }
 function hubHTML(){
-  const a=HUB.find(x=>x.k===S.hub);
-  return '<p class="lbl">Help, in plain words</p><div class="hubs" style="margin-top:12px">'+HUB.map(h=>'<button class="hb" data-act="hub" data-k="'+h.k+'" aria-pressed="'+(S.hub===h.k)+'"><b>'+esc(h.t())+'</b><span>'+h.d+'</span></button>').join('')+'</div>'+
-   (a?'<div class="ans"><b>'+esc(a.t())+'</b><p style="margin-top:8px">'+esc(a.a())+'</p><div class="row"><a class="btn pri" href="'+WA+'Hello%2C%20I%20need%20help%20with%20DELIGHT." target="_blank" rel="noopener">Message us on WhatsApp</a></div></div>':'');
+  const L=S.path==='api'?AHUB:HUB;
+  const a=L.find(x=>x.k===S.hub);
+  return '<p class="lbl">Help, in plain words</p><div class="hubs" style="margin-top:12px">'+L.map(h=>'<button class="hb" data-act="hub" data-k="'+h.k+'" aria-pressed="'+(S.hub===h.k)+'"><b>'+esc(h.t())+'</b><span>'+h.d+'</span></button>').join('')+'</div>'+
+   (a?'<div class="ans"><b>'+esc(a.t())+'</b><p style="margin-top:8px">'+esc(a.a())+'</p><div class="row"><a class="btn pri" href="'+MAILTO+'Hello%2C%20I%20need%20help%20with%20DELIGHT.">Email us</a></div></div>':'');
 }
 function sApp(){
   const tabs=[['helpers','Helpers'],['chat','See it in a chat'],['help','Help']];
@@ -416,11 +506,33 @@ function sApp(){
     main='<div class="dir"><div class="pnl"><input class="search" id="q" type="search" placeholder="Search, e.g. spreadsheet" value="'+esc(S.q)+'" aria-label="Search helpers"><ul class="res" id="lst">'+listHTML()+'</ul></div><div class="pnl" id="det">'+(S.flow?flowHTML():detailHTML())+'</div></div>';
   }else if(S.tab==='chat') main='<div class="pnl">'+chatHTML()+'</div>';
   else main='<div class="pnl">'+hubHTML()+'</div>';
-  return '<section class="hello" style="padding-bottom:0"><h1 style="font-size:clamp(28px,4.4vw,40px)">Pick a helper.</h1></section>'+recap()+
+  return '<section class="hello" style="padding-bottom:0"><h1 style="font-size:clamp(28px,4.4vw,40px)">MCP helpers: pick one.</h1></section>'+recap()+
    '<div class="tabs" role="group" aria-label="Sections">'+tabs.map(t=>'<button data-act="tab" data-k="'+t[0]+'" aria-pressed="'+(S.tab===t[0])+'">'+t[1]+'</button>').join('')+'</div>'+main;
 }
+function sAPI(){
+  const tabs=[['helpers','APIs'],['help','Help']];
+  const rc='<div class="recap"><span class="rc"><small>Computer</small><b>'+OSN[S.os]+'</b><button class="chg" data-act="chgos">Change</button></span>'+
+   '<span class="rc"><small>You chose</small><b>API: ready-made back-ends</b><button class="chg" data-act="chgpath">Change</button></span></div>';
+  let main;
+  if(S.tab==='helpers'){
+    main='<div class="dir"><div class="pnl"><input class="search" id="q" type="search" placeholder="Search, e.g. payments" value="'+esc(S.q)+'" aria-label="Search APIs"><ul class="res" id="lst">'+listHTML()+'</ul></div><div class="pnl" id="det">'+(S.flow&&helper().ready?aflowHTML():adetailHTML())+'</div></div>';
+  }else main='<div class="pnl">'+hubHTML()+'</div>';
+  return '<section class="hello" style="padding-bottom:0"><h1 style="font-size:clamp(28px,4.4vw,40px)">APIs: pick one.</h1></section>'+rc+
+   '<div class="tabs" role="group" aria-label="Sections">'+tabs.map(t=>'<button data-act="tab" data-k="'+t[0]+'" aria-pressed="'+(S.tab===t[0])+'">'+t[1]+'</button>').join('')+'</div>'+main;
+}
+function navHTML(){
+  if(S.step==='path') return '';
+  return '<div class="navbar"><button class="nb" data-act="back">'+ico('<path d="M15 6l-6 6 6 6"/>',20)+'<span>Back</span></button></div>';
+}
+function goBack(){
+  if(S.flow){S.flow=false;S.stage=0;S.bad=false;S.issue=null;render();return;}
+  if((S.step==='app'||S.step==='api')&&S.tab!=='helpers'){S.tab='helpers';render();return;}
+  const to={os:'path',ai:'os',app:'ai',api:'os',phone:'os',other:'os',noai:'ai'}[S.step]; if(!to) return;
+  if(to==='path') S.path=null; if(to==='os'){S.os=null;S.ai=null;} if(to==='ai') S.ai=null;
+  S.step=to; S.tab='helpers'; S.hub=null; S.q=''; render(); window.scrollTo({top:0});
+}
 function render(){
-  $('#app').innerHTML=({os:sOS,other:sOther,phone:sPhone,ai:sAI,noai:sNoAI,app:sApp}[S.step])();
+  $('#app').innerHTML=navHTML()+({path:sPath,os:sOS,other:sOther,phone:sPhone,ai:sAI,noai:sNoAI,app:sApp,api:sAPI}[S.step])();
 }
 function copyText(btn,text){const l=btn.textContent;const d=()=>{btn.textContent='Copied';setTimeout(()=>btn.textContent=l,1300)};
   if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(text).then(d,()=>{btn.textContent='Press Ctrl+C'})}else{btn.textContent='Press Ctrl+C'}}
@@ -429,7 +541,10 @@ document.addEventListener('click',e=>{
   const t=e.target.closest('[data-act]'); if(!t||t.disabled) return;
   const d=t.dataset;
   switch(d.act){
-    case 'os': S.os=d.k; S.step=(d.k==='phone')?'phone':'ai'; render(); window.scrollTo({top:0}); break;
+    case 'path': S.path=d.k; S.sel=d.k==='api'?'sign':'files'; S.tab='helpers'; S.flow=false; S.stage=0; S.bad=false; S.issue=null; S.hub=null; S.q='';
+      S.step=!S.os?'os':(S.os==='phone'?'phone':(d.k==='api'?'api':'ai')); render(); window.scrollTo({top:0}); break;
+    case 'chgpath': S.path=null; S.flow=false; S.step='path'; render(); window.scrollTo({top:0}); break;
+    case 'os': S.os=d.k; S.step=(d.k==='phone')?'phone':(S.path==='api'?'api':'ai'); render(); window.scrollTo({top:0}); break;
     case 'osother': S.step='other'; render(); break;
     case 'chgos': S.os=null; S.ai=null; S.step='os'; S.flow=false; render(); window.scrollTo({top:0}); break;
     case 'ai': S.ai=d.k; S.step='app'; S.tab='helpers'; S.flow=false; S.stage=0; S.bad=false; render(); window.scrollTo({top:0}); break;
@@ -445,14 +560,16 @@ document.addEventListener('click',e=>{
     case 'issue': S.issue=d.k; render(); break;
     case 'fixed': S.bad=false; S.issue=null; S.stage=4; render(); break;
     case 'more': S.flow=false; S.stage=0; render(); break;
+    case 'home': e.preventDefault(); S.path=null; S.flow=false; S.step='path'; S.stage=0; S.bad=false; S.issue=null; S.tab='helpers'; S.hub=null; S.q=''; render(); window.scrollTo({top:0}); break;
+    case 'back': goBack(); break;
     case 'copy': copyText(t,d.text); break;
     case 'chatconn': S.chat=true; render(); break;
     case 'chatno': S.chat=false; render(); break;
     case 'hub': S.hub=d.k; render(); break;
-    case 'usedesktop': S.ai='claude'; S.flow=false; render(); break;
   }
 });
 S.guess=detectOS(typeof navigator!=='undefined'&&navigator.userAgent);
+(function(){const m=(location.hash||'').replace('#','').split(':');if(m[0]==='mcp'||m[0]==='api'){S.path=m[0];S.sel=(m[1]&&SRC().some(h=>h.k===m[1]))?m[1]:(m[0]==='api'?'sign':'files');S.step='os';}})();
 render();
 </script>
 </body>
