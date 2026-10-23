@@ -167,15 +167,15 @@ pre{margin:10px 0 14px;padding:14px;border-radius:12px;background:var(--bg);bord
 <div class="topband"><div class="wrap" style="padding-bottom:0">
   <header class="top">
     <a class="brand" href="./" data-act="home"><svg width="40" height="40" viewBox="0 0 40 40" aria-hidden="true"><rect x="2" y="2" width="36" height="36" rx="10" fill="#0B1633"/><circle cx="20" cy="21" r="9" fill="none" stroke="#FFB000" stroke-width="3"/><circle cx="20" cy="21" r="2.5" fill="#FFB000"/></svg><span>DELIGHT<small>Built in Uganda by Bryt Matech UG</small></span></a>
-    <span class="hrow"><button class="homebtn" data-act="home" aria-label="Home"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11l9-8 9 8M5 10v10h5v-6h4v6h5V10"/></svg></button><a class="help" href="https://wa.me/256759621612?text=Hello%2C%20I%20need%20help%20with%20DELIGHT." target="_blank" rel="noopener">Need a hand?</a></span>
+    <span class="hrow"><button class="homebtn" data-act="home" aria-label="Home"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11l9-8 9 8M5 10v10h5v-6h4v6h5V10"/></svg></button><a class="help" href="mailto:muhumuzabright26@gmail.com?subject=DELIGHT%20help">Need a hand?</a></span>
   </header>
 </div></div>
 <div class="wrap">
   <noscript><div class="panel"><h2>This page needs JavaScript.</h2><p class="note">Please turn it on, or email us at <a href="mailto:muhumuzabright26@gmail.com">muhumuzabright26@gmail.com</a>.</p></div></noscript>
   <main id="app"></main>
   <footer class="foot">
-    <span>Questions? <a href="mailto:muhumuzabright26@gmail.com">muhumuzabright26@gmail.com</a> &middot; <a href="mailto:brytma616@gmail.com">brytma616@gmail.com</a> &middot; <a href="tel:+256759621612">0759 621 612</a></span>
-    <span>Free helpers and APIs &middot; <a href="https://github.com/muhumuza684/DELIGHT-MCP-SERVERS-" rel="noopener">For developers: source code</a></span>
+    <span>Questions? <a href="mailto:muhumuzabright26@gmail.com">muhumuzabright26@gmail.com</a> &middot; <a href="mailto:brytma616@gmail.com">brytma616@gmail.com</a></span>
+    <span>Free helpers and APIs</span>
   </footer>
 </div>
 
@@ -432,8 +432,7 @@ function adetailHTML(){
    '<div class="know"><b>Good to know:</b> '+esc(h.know)+'</div>'+
    '<div class="sec"><h3>What you need</h3><ul><li>'+OKI+'<span>Node.js, free and installed once.</span></li><li>'+OKI+'<span>'+esc(h.needs)+'</span></li></ul></div>'+
    '<div class="sec"><h3>Privacy and support</h3><ul><li>'+OKI+'<span>It runs on your computer. Your data stays with you.</span></li><li>'+OKI+'<span>Support: '+SUPPORT+'</span></li></ul></div>'+
-   '<details class="dev"><summary>For developers</summary><ol><li>Open <code>README.md</code> in the folder: every request, and what to change for each client.</li><li>Import <code>postman_collection.json</code> into Postman to click-test it.</li><li>It runs on <code>http://localhost:'+h.port+'</code>. Change the port and keys in <code>.env</code>.</li></ol></details>'+
-   '<div class="rev"><b>Reviews:</b> none yet. We will not invent any.</div>';
+      '<div class="rev"><b>Reviews:</b> none yet. We will not invent any.</div>';
 }
 function acts(rows){
   return '<ol class="acts">'+rows.map((r,i)=>{const st=i<S.stage?'done':i===S.stage?'active':'next';
