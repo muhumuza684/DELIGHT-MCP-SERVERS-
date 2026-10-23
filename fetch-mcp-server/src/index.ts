@@ -175,7 +175,7 @@ function toolError(message: string) {
   };
 }
 
-const server = new McpServer({ name: "fetch-mcp-server - Built in Uganda by Bryt Matech UG", version: "1" });
+const server = new McpServer({ name: "fetch-mcp-server", version: "1.0.0" });
 
 server.registerTool(
   "fetch_url",

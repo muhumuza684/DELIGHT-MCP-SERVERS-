@@ -145,7 +145,7 @@ const TOOLS = {
   'notion-mcp-server': ['search', 'get_page', 'get_page_content', 'query_database']
 };
 async function basics(s, folder) {
-  await check('starts and says hello, with the right name and your branding', async () => { has(s.info.name, BRAND, 'server name'); });
+  await check('starts and says hello, with a clean name, a version, and your branding', async () => { ok(/^[a-z-]+-mcp-server$/.test(s.info.name), 'server name: ' + s.info.name); ok(/^\d+\.\d+\.\d+/.test(String(s.info.version)), 'server version: ' + s.info.version); has(fs.readFileSync(new URL('../' + s.info.name + '/dist/index.js', import.meta.url), 'utf8'), BRAND, 'branding in built code'); });
   await check('offers exactly the expected tools', async () => {
     const got = (await s.tools()).sort(), want = [...TOOLS[folder]].sort();
     eq(got.join(','), want.join(','), 'tool list');

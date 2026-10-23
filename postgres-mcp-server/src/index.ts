@@ -98,7 +98,7 @@ function textResult(data: unknown) {
 // ---------------------------------------------------------------------------
 // Server
 // ---------------------------------------------------------------------------
-const server = new McpServer({ name: "postgres-mcp-server - Built in Uganda by Bryt Matech UG", version: "1" });
+const server = new McpServer({ name: "postgres-mcp-server", version: "1.0.0" });
 
 server.registerTool(
   "list_schemas",

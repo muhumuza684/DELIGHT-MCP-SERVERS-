@@ -108,7 +108,7 @@ function writeGateError() {
 // ---------------------------------------------------------------------------
 // Server
 // ---------------------------------------------------------------------------
-const server = new McpServer({ name: "stripe-mcp-server - Built in Uganda by Bryt Matech UG", version: "1" });
+const server = new McpServer({ name: "stripe-mcp-server", version: "1.0.0" });
 
 server.registerTool(
   "list_customers",

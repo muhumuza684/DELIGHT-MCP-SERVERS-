@@ -94,7 +94,7 @@ const GOOGLE_EXPORT_MIME: Record<string, string> = {
 // ---------------------------------------------------------------------------
 // Server
 // ---------------------------------------------------------------------------
-const server = new McpServer({ name: "google-drive-mcp-server - Built in Uganda by Bryt Matech UG", version: "1" });
+const server = new McpServer({ name: "google-drive-mcp-server", version: "1.0.0" });
 
 server.registerTool(
   "search_files",
